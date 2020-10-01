@@ -20,27 +20,29 @@
         let playerScore = 0;
         let computerScore = 0;
 
-        const playerSelection = userPlay();
-        const computerSelection = computerPlay();
-
         // Use the previous function inside of this one to
         // a function for the computer to randomly select rock, paper, or scissors from an array
-        function computerPlay() {
-            let weaponArray = ["rock", "paper", "scissors"];
-            let choice =
-                weaponArray[Math.floor(Math.random() * weaponArray.length)];
-            return choice;
-        }
-        // an insensitive function that prompts the user for an entry
-        function userPlay() {
-            let choice = prompt("Make your choice");
-            choice = choice.toLowerCase().toString();
-            return choice;
-        }
+        // function computerPlay() {
+        //     let weaponArray = ["rock", "paper", "scissors"];
+        //     let choice =
+        //         weaponArray[Math.floor(Math.random() * weaponArray.length)];
+        //     return choice;
+        // }
+        // // an insensitive function that prompts the user for an entry
+        // function userPlay() {
+        //     let choice = prompt("Make your choice");
+        //     choice = choice.toLowerCase().toString();
+        //     return choice;
+        // }
 
         // a function that plays a round of rps & returns a victory or defeat string
         // function playRound(playerSelection, computerSelection) {
         for (let count = 1; count <= rounds; count++) {
+            let userChoice = prompt("Make your choice");
+            let playerSelection = userChoice.toLowerCase().toString();
+            let weaponArray = ["rock", "paper", "scissors"];
+            let computerSelection =
+                weaponArray[Math.floor(Math.random() * weaponArray.length)];
             if (playerSelection == computerSelection) {
                 console.log(
                     `${playerSelection} and ${computerSelection}. It's a tie!`
@@ -84,13 +86,12 @@
             );
 
             // and reports a winner or loser at the end. */
-
-            // return playerScore > computerScore ?
-            //     `You are victorious!` :
-            //     playerScore < computerScore ?
-            //     `You have been defeated!` :
-            //     `A draw! Play again?`;
         }
+        return playerScore > computerScore ?
+            `You are victorious!` :
+            playerScore < computerScore ?
+            `You have been defeated!` :
+            `A draw! Play again?`;
     }
     // console.log(playRound(playerSelection, computerSelection));
 </script>
