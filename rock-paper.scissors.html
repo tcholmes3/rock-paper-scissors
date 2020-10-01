@@ -13,7 +13,7 @@
     function game() {
         // play a 5 round game
 
-        let roundCount = 0;
+        let rounds = 5;
 
         // that keeps scores
 
@@ -39,59 +39,58 @@
         }
 
         // a function that plays a round of rps & returns a victory or defeat string
-        function playRound(playerSelection, computerSelection) {
+        // function playRound(playerSelection, computerSelection) {
+        for (let count = 1; count <= rounds; count++) {
             if (playerSelection == computerSelection) {
-                return `${playerSelection} and ${computerSelection}. It's a tie!`;
-                roundCount++;
+                console.log(
+                    `${playerSelection} and ${computerSelection}. It's a tie!`
+                );
             } else if (playerSelection == "paper" && computerSelection == "rock") {
-                roundCount++;
+                console.log(`paper covers rock. You win!`);
                 playerScore++;
-                return `paper covers rock. You win!`;
             } else if (
                 playerSelection == "paper" &&
                 computerSelection == "scissors"
             ) {
-                roundCount++;
+                console.log(`scissors cuts paper. You lose!`);
                 computerScore++;
-                return `scissors cuts paper. You lose!`;
             } else if (playerSelection == "rock" && computerSelection == "paper") {
-                roundCount++;
+                console.log(`paper covers rock. You lose!`);
                 computerScore++;
-                return `paper covers rock. You lose!`;
             } else if (
                 playerSelection == "rock" &&
                 computerSelection == "scissors"
             ) {
-                roundCount++;
+                console.log(`rock crushes scissors. You win!`);
                 playerScore++;
-                return `rock crushes scissors. You win!`;
             } else if (
                 playerSelection == "scissors" &&
                 computerSelection == "rock"
             ) {
-                roundCount++;
+                console.log(`rock crushes scissors. You lose!`);
                 computerScore++;
-                return `rock crushes scissors. You lose!`;
             } else if (
                 playerSelection == "scissors" &&
                 computerSelection == "paper"
             ) {
-                roundCount++;
+                console.log(`scissors cuts paper. You win!`);
                 playerScore++;
-                return `scissors cuts paper. You win!`;
             }
+            // }
             // displays current scores after each round
 
-            return `Your Score: ${playerScore}  Bot Score: ${computerScore}`;
+            console.log(
+                ` Round #${count} Your Score: ${playerScore}  Bot Score: ${computerScore}`
+            );
+
+            // and reports a winner or loser at the end. */
+
+            // return playerScore > computerScore ?
+            //     `You are victorious!` :
+            //     playerScore < computerScore ?
+            //     `You have been defeated!` :
+            //     `A draw! Play again?`;
         }
-
-        // and reports a winner or loser at the end. */
-
-        return playerScore > computerScore ?
-            `You are victorious!` :
-            playerScore < computerScore ?
-            `You have been defeated!` :
-            `A draw! Play again?`;
     }
     // console.log(playRound(playerSelection, computerSelection));
 </script>
