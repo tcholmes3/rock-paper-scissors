@@ -9,7 +9,7 @@
 
 <body></body>
 <script>
-    // /* Write a NEW function called game().
+    // Write a NEW function called game().
     function game() {
         // play a 5 round game
 
@@ -20,7 +20,6 @@
         let playerScore = 0;
         let computerScore = 0;
 
-        // Use the previous function inside of this one to
         // a function for the computer to randomly select rock, paper, or scissors from an array
         // function computerPlay() {
         //     let weaponArray = ["rock", "paper", "scissors"];
@@ -37,6 +36,7 @@
 
         // a function that plays a round of rps & returns a victory or defeat string
         // function playRound(playerSelection, computerSelection) {
+
         for (let count = 1; count <= rounds; count++) {
             let userChoice = prompt("Make your choice");
             let playerSelection = userChoice.toLowerCase().toString();
@@ -85,7 +85,7 @@
                 ` Round #${count} Your Score: ${playerScore}  Bot Score: ${computerScore}`
             );
 
-            // and reports a winner or loser at the end. */
+            // and reports a winner or loser at the end.
         }
         return playerScore > computerScore ?
             `You are victorious!` :
@@ -93,7 +93,6 @@
             `You have been defeated!` :
             `A draw! Play again?`;
     }
-    // console.log(playRound(playerSelection, computerSelection));
 </script>
 
 </html>
