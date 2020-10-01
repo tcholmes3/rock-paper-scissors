@@ -42,36 +42,48 @@
         function playRound(playerSelection, computerSelection) {
             if (playerSelection == computerSelection) {
                 return `${playerSelection} and ${computerSelection}. It's a tie!`;
+                roundCount++;
             } else if (playerSelection == "paper" && computerSelection == "rock") {
+                roundCount++;
+                playerScore++;
                 return `paper covers rock. You win!`;
             } else if (
                 playerSelection == "paper" &&
                 computerSelection == "scissors"
             ) {
+                roundCount++;
+                computerScore++;
                 return `scissors cuts paper. You lose!`;
             } else if (playerSelection == "rock" && computerSelection == "paper") {
+                roundCount++;
+                computerScore++;
                 return `paper covers rock. You lose!`;
             } else if (
                 playerSelection == "rock" &&
                 computerSelection == "scissors"
             ) {
+                roundCount++;
+                playerScore++;
                 return `rock crushes scissors. You win!`;
             } else if (
                 playerSelection == "scissors" &&
                 computerSelection == "rock"
             ) {
+                roundCount++;
+                computerScore++;
                 return `rock crushes scissors. You lose!`;
             } else if (
                 playerSelection == "scissors" &&
                 computerSelection == "paper"
             ) {
+                roundCount++;
+                playerScore++;
                 return `scissors cuts paper. You win!`;
             }
+            // displays current scores after each round
+
+            return `Your Score: ${playerScore}  Bot Score: ${computerScore}`;
         }
-
-        // displays current scores after each round
-
-        return `Your Score: ${playerScore}  Bot Score: ${computerScore}`;
 
         // and reports a winner or loser at the end. */
 
